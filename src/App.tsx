@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   const { tasks, filter, setFilter, addTask } = useTasks();
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+// TODO: удалить перед сдачей!!!!!!!!!!!!!
   return (
     <div className="app">
       <header className="app__header">

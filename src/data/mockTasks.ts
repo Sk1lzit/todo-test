@@ -1,5 +1,7 @@
 import type { Task } from '../types';
 
+// Моковые данные. 
+
 export const mockTasks: Task[] = [
   {
     id: '1',

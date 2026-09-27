@@ -7,10 +7,16 @@ export function useTasks() {
   const [tasks, setTasks] = useState<Task[]>(mockTasks);
   const [filter, setFilter] = useState<FilterValue>('all');
 
+  // useMemo, чтобы не пересчит фильтр на каждом рендере
+  // При 5 задачах разницы нет, но при больш кол уже заметно
+
   const filteredTasks = useMemo(
     () => filterTasks(tasks, filter),
     [tasks, filter]
   );
+
+ // useCallback, чтобы addTask не созд заново
+  // (важно, если потом передавать её в memo-компоненты)
 
   const addTask = useCallback(
     (data: Omit<Task, 'id' | 'createdAt'>) => {
@@ -19,6 +25,7 @@ export function useTasks() {
         id: crypto.randomUUID(),
         createdAt: new Date(),
       };
+      // Новые задачи — в начало списка
       setTasks(prev => [newTask, ...prev]);
     },
     []

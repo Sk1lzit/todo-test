@@ -19,11 +19,13 @@ export function CreateTaskModal({ isOpen, onClose, onCreate }: CreateTaskModalPr
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+     // Валид на клиенте. На бэке нужна, но его нет
     if (title.trim().length < 3) {
       setError('Заголовок должен быть минимум 3 символа');
       return;
     }
     onCreate({ title: title.trim(), description: description.trim(), priority });
+      // Сброс формы, чтобы при повт откр было пусто
     setTitle('');
     setDescription('');
     setPriority('medium');

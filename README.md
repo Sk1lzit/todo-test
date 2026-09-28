@@ -19,29 +19,29 @@ npm run dev
 
 ## Архитектура
 
-\`\`\`
+```
 src/
 ├── components/
-│   ├── ui/                    # Переиспользуемые UI-компоненты
+│   ├── ui/
 │   │   ├── Button.tsx
 │   │   ├── Input.tsx
 │   │   ├── Select.tsx
 │   │   └── Modal.tsx
-│   ├── TaskCard.tsx           # Карточка задачи (memo)
-│   ├── TaskList.tsx           # Список задач
-│   ├── TaskFilters.tsx        # Фильтры по приоритету
-│   └── CreateTaskModal.tsx    # Модалка создания
+│   ├── TaskCard.tsx
+│   ├── TaskList.tsx
+│   ├── TaskFilters.tsx
+│   └── CreateTaskModal.tsx
 ├── types/
-│   └── index.ts               # Типы: Task, Priority, FilterValue
+│   └── index.ts
 ├── data/
-│   └── mockTasks.ts           # Моковые данные
+│   └── mockTasks.ts
 ├── hooks/
-│   └── useTasks.ts            # Логика работы с задачами
+│   └── useTasks.ts
 ├── utils/
-│   └── filterTasks.ts         # Чистая функция фильтрации
+│   └── filterTasks.ts
 ├── App.tsx
 └── main.tsx
-\`\`\`
+```
 
 ## Решения
 
